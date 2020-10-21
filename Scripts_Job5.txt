@@ -1,0 +1,47 @@
+Script1:
+#!/bin/bash
+
+
+normal=`grep -o 'e' jour2.txt | wc -l`
+accenta=`grep -o 'é' jour2.txt | wc -l`
+accentg=`grep -o 'è' jour2.txt | wc -l`
+accentc=`grep -o 'ê' jour2.txt | wc -l`
+accentt=`grep -o 'ë' jour2.txt | wc -l`
+
+echo Il ya $((normal + accenta + accentg + accentc + accentt)) '"e"' dans jour2.txt
+
+
+Script2:
+#!/bin/bash
+
+grep '^j\|^J' jour2.txt
+
+
+Script3:
+#!/bin/bash
+
+grep '[0-999999999999999999999999]' jour2.txt
+
+
+Script4:
+#!/bin/bash
+
+grep 'ch\|j' jour2.txt
+
+
+Script5:
+#!/bin/bash
+
+grep '^[A-Z]' jour2.txt
+
+
+Script6:
+#!/bin/bash
+
+grep "^Job" jour2.txt
+
+
+Script7:
+#!/bin/bash
+
+grep job\ 52 jour2.txt

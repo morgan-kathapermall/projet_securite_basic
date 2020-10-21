@@ -1,0 +1,59 @@
+La commande man suivi du nom du paquet permet d'avoir des renseignements dessus
+
+La commande touch permet de créer des fichiers
+La commande mkdir permet de créer des répertoires
+
+La commande rm permet de supprimer des fichiers
+La commande rmdir permet de supprimer des réportoires
+La commande rmdir -fr permet de forcer la suppression d'un répertoire et son contenu
+
+Pour mettre des espaces dans le nom d'un répertoire, il suffit de coller un \ au mot précedent:
+exemple: touch voici\ un\ répertoire\ avec\ espaces
+
+On peut déplacer des fichiers avec mv : mv chemin/nom_du_fichier_à_déplacer chemin de destination
+ou changer le nom grace a la commande mv : mv ancien_nom nouveau_nom
+
+Pour copier les fichiers utliser la commande cp chemin/nom_du_fichier chemin_de_destination/
+remplacer le nom du fichier par étoile pour tout sélectionner
+
+Creer un utilisateur: useradd
+Enlever le mot de passe a un compte: sudo passwd -d nom_utilisateur
+
+Creer un utilisateur avec un reportoire home: useradd -m
+Creer un répertoire home pour un utilsateur existant: mkhomedir_helper nom_utilisateur
+
+Remove un utilisateur: userdel
+
+Creer un groupe: usergroup
+
+Ajouter un utilsateur dans un groupe : usermod -a -G nom_groupe nom_utilsateur
+
+Pour verifier faire un "cat" sur /etc/group
+
+
+Pour accorder tous les droits à tout le monde:
+
+chmod ugo+rwx nom_fichier/répertoire
+dans ugo = u -> users   |
+           g -> group   |-> tout ca peut etre remplacer par la lettre "a"
+           o -> others  |
+
+Il y aussi une méthode avec des chiffres: chmod 777 nom_fichier
+
+Pour donner les droits à un groupe en particulier: chgrp nom_groupe nom_fichier
+
+Pour vérifier le tout faire un ls -l
+
+Pour changer de compte facilement utilser la commande su et le nom_utilisateur
+
+La commande truncate -s "taille" nom_fichier permet de créer un fichier de la taille qu'on veut
+
+Pour lancer un script deux facons : ./script.sh ou sh -c script.sh
+
+Pour télécharger il nous la commande wget suivi du lien de téléchargement
+
+Pour faire un grep dans un pdf utilser pdfgrep
+
+La commande /var/log/syslog permet de voir les logs machines
+La commande /var/log/debug permet également de voir les logs
+Il sont classés à chaque date a chaque erreur

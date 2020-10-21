@@ -1,0 +1,813 @@
+ 1  touch
+    2  apt install nano
+    3  sudo apt install nano
+    4  ls
+    5  cd /
+    6  ls
+    7  touch commandes.txt
+    8  sudo touch commandes.txt
+    9  sudo su touch commandes.txt
+   10  su touch commandes.txt
+   11  su root touch commandes.txt
+   12  sudo si
+   13  sudo su
+   14  sudo su touch commandes.txt
+   15  sudo touch commandes.txt
+   16  usermod -aG sudo rssi
+   17  sudo usermod -aG sudo rssi
+   18  exit
+   19  cd /
+   20  ls
+   21  sudo touch commandes.txt
+   22  ls
+   23  cat commandes.txt
+   24  nano commandes.txt
+   25  sudo nano commandes.txt
+   26  clear
+   27  sudo nano commandes.txt
+   28  clear
+   29  ls
+   30  man dir
+   31  q
+   32  man rm
+   33  ls
+   34  sudo nano commandes.txt
+   35  man rm
+   36  sudo nano commandes.txt
+   37  clear
+   38  sudo touch fichier1.txt fichier2.txt fichier3.txt fichier4.txt
+   39  ls
+   40  sudo apt install rename
+   41  sudo nano commandes.txt
+   42  sudo touch ceci\ est\ un\ test\
+   43  ls
+   44  cd ceci\ est\ un\ test
+   45  cd ceciest un test
+   46  rm ceci\ est\ un\ test
+   47  rm -f ceci\ est\ un\ test
+   48  sudo rm ceci\ est\ un\ test
+   49  ls
+   50  mkdir ceci\ est\ un\ test
+   51  sudo mkdir ceci\ est\ un\ test
+   52  ls
+   53  cd ceci\ est\ un\ test/
+   54  ls
+   55  cd ..
+   56  ls
+   57  rm ceci\ est\ un\ test/
+   58  sduo rmdir ceci\ est\ un\ test/
+   59  sudo rmdir ceci\ est\ un\ test/
+   60  ls
+   61  sudo nano commandes.txt
+   62  sudo mkdir mes\ premiers
+   63  ls
+   64  sudo mkdir avant\ poubelle
+   65  ls
+   66  mv fichier1.txt mes\ premiers/
+   67  sudo mv fichier1.txt mes\ premiers/
+   68  sudo mv fichier2.txt mes\ premiers/
+   69  sudo mv fichier2.txt avant\ poubelle/
+   70  sudo mv fichier3.txt avant\ poubelle/
+   71  sudo mv fichier4.txt avant\ poubelle/
+   72  apt install rename
+   73  sudo apt install rename
+   74  man rename
+   75  rename avant\ poubelle/ proto\ poubelle
+   76  sudo rename avant\ poubelle/ proto\ poubelle
+   77  sudo rename avant\ poubelle/ proto\ poubelle/
+   78  sudo rename 'avant\ poubelle/' 'proto\ poubelle/'
+   79  sudo rename avant\ poubelle/ proto\ poubelle/
+   80  man rename
+   81  sudo rename -f avant\ poubelle/ proto\ poubelle/
+   82  mv avant\ poubelle/ proto\ pooubelle
+   83  sudo mv avant\ poubelle/ proto\ pooubelle
+   84  s
+   85  ls
+   86  cd proto\ pooubelle/
+   87  ls
+   88  cd ..
+   89  cd mes\ premiers/
+   90  ls
+   91  cdp fichier1.txt /proto\ pooubelle/
+   92  cp fichier1.txt /proto\ pooubelle/
+   93  sudo cp fichier1.txt /proto\ pooubelle/
+   94  ls
+   95  cd ..
+   96  nano commandes.txt
+   97  sudo nano commandes.txt
+   98  clear
+   99  ls
+  100  cd proto\ pooubelle/
+  101  l
+  102  ls
+  103  rm fichier4.txt
+  104  sudo rm fichier4.txt
+  105  ls
+  106  sl
+  107  ls
+  108  cd mes\ premiers/
+  109  cp * /proto\ pooubelle/
+  110  sudo cp * /proto\ pooubelle/
+  111  ls
+  112  cd ..
+  113  ls
+  114  sudo nano commandes.txt
+  115  clear
+  116  ls
+  117  cd mes\ premiers/
+  118  ls
+  119  cd ..
+  120  cd proto\ pooubelle/
+  121  ls
+  122  cd
+  123  ls
+  124  cd /
+  125  ls
+  126  sudo useradd utilsateur
+  127  sudo groupadd utilsateur
+  128  sudo groupadd invites
+  129  sudo usermod -a -G invites utilisateur
+  130  sudo useremove utilsateur
+  131  sudo userm utilsateur
+  132  sudo rmuser utilsateur
+  133  sudo userdel utilsateur
+  134  sudo useradd utilisateur
+  135  nano commandes.txt
+  136  sudo nano commandes.txt
+  137  sudo usermod -a -G invites utilisateur
+  138  sudo useradd assistant
+  139  sudo groupadd administrateur
+  140  sudo usermod -a -G administrateur assitant
+  141  sudo usermod -a -G administrateur assistant
+  142  sudo useradd test
+  143  sudo userdel test
+  144  nano commandes.txt
+  145  ls
+  146  cd /home
+  147  ls
+  148  sudo reboot
+  149  ls
+  150  dc ..
+  151  ls
+  152  cd ..
+  153  ls
+  154  cd ..
+  155  exit
+  156  cd /home/
+  157  ls
+  158  sudo mkhomedir_helper assistant
+  159  ls
+  160  sudo nano /commandes.txt
+  161  cd utilisateur/
+  162  ls
+  163  mkdir My\ configs
+  164  sudo mkdir My\ configs
+  165  cd My\ configs/
+  166  ls
+  167  touch conf1.conf conf2.conf
+  168  sudo touch conf1.conf conf2.conf
+  169  sudo chmod ugo+rwx conf1.conf
+  170  cat /etc/groip
+  171  cat /etc/group
+  172  sudo nano /commandes.txt
+  173  ls
+  174  l
+  175  ls -l
+  176  sudo chgrp invites conf2.conf
+  177  ls -l
+  178  usermod -aG sudo rssi
+  179  sudo usermod -aG sudo rssi
+  180  ls
+  181  mkdir test
+  182  sudo mkdir test
+  183  ls
+  184  ls l-
+  185  ls -l
+  186  rm test/
+  187  rmdir test/
+  188  sudormdir test/
+  189  sudo mdir test/
+  190  sudo rmdir test/
+  191  ls
+  192  sudo nano /commandes.txt
+  193  clea
+  194  clear
+  195  ls
+  196  dc ..
+  197  cd ..
+  198  ls
+  199  dc utilisateur/
+  200  ls
+  201  cd utilisateur/
+  202  ls
+  203  cd My\ configs/
+  204  ls
+  205  ls -l
+  206  chmod 777 conf1.conf
+  207  sudo chmod 777 conf1.conf
+  208  ls
+  209  ls -l
+  210  nano sudo /commandes.txt
+  211  sudo nano sudo /commandes.txt
+  212  sudo nano /commandes.txt
+  213  l
+  214  ls
+  215  cd
+  216  cd
+  217  cd /home/utilisateur/
+  218  ls
+  219  cd My\ configs/
+  220  ls
+  221  cat conf1.conf
+  222  ls
+  223  cat conf1.conf
+  224  exit
+  225  ls
+  226  slc
+  227  cd /home/utilisateur/
+  228  ls
+  229  cd My\ configs/
+  230  ls
+  231  ls -l conf1.conf
+  232  ls -l conf2.conf
+  233  ls -l
+  234  ls l-
+  235  ls -l
+  236  chmod conf2.conf 070 conf2.conf
+  237  sudo chmod conf2.conf 070 conf2.conf
+  238  sudo chmod 070 conf2.conf
+  239  ls
+  240  ls-l
+  241  ls -l
+  242  nano
+  243  clear
+  244  ls
+  245  cat conf2.conf
+  246  nano sudo /commandes.txt
+  247  sudo nano /commandes.txt
+  248  ls
+  249  sudo adduser
+  250  sudo adduser invite
+  251  ls
+  252  c d..
+  253  cd  ..
+  254  cd ..
+  255  ls
+  256  ls -a
+  257  cd ..
+  258  ls
+  259  cd utilisateur/
+  260  ls -a
+  261  cd ..
+  262  ls
+  263  cd invite/
+  264  ls
+  265  ls -a
+  266  mkdir My\ configs
+  267  sudo mkdir My\ configs
+  268  ls
+  269  cd My\ configs/
+  270  touch conf1.conf conf2.conf
+  271  sudo touch conf1.conf conf2.conf
+  272  sudo cat /commandes.txt
+  273  sudo usermod -a -G invites invite
+  274  cat /etc/group
+  275  ls
+  276  chmod 777 conf1.conf
+  277  sudo chmod 777 conf1.conf
+  278  sudo chmod 070 conf1.conf
+  279  ls l-
+  280  ls -l
+  281  sudo chmod 777 conf1.conf
+  282  sudo chmod 070 conf2.conf
+  283  ld
+  284  ls -l
+  285  exit
+  286  sudo passwd -d invite
+  287  su invite
+  288  su utilisateur
+  289  sudo passwd -d utilisateur
+  290  sudo passwd -d assistant
+  291  sudo nano /commandes.txt
+  292  exit
+  293  su invite
+  294  sudo passwd invite
+  295  su invite
+  296  exit
+  297  sudo chgrp invites conf2.conf
+  298  ls
+  299  ls -l
+  300  exit
+  301  ls
+  302  cd invite/
+  303  ls
+  304  cd My\ configs/
+  305  ls
+  306  cat conf1.conf
+  307  cat conf2.conf
+  308  cd ..
+  309  ls
+  310  cd My\ configs/
+  311  LS
+  312  exit
+  313  sudo nano /commandes.txt
+  314  ls
+  315  tree
+  316  sudo tree
+  317  ls -h
+  318  cd
+  319  cd /
+  320  ls
+  321  ls -h
+  322  ls -lsh
+  323  ls -lsha
+  324  ls -lsh
+  325  ls
+  326  cd /home/
+  327  ls
+  328  sudo -u invite test -r utilisateur/My\ configs/conf2.conf
+  329  sudo -u assitant test -r utilisateur/My\ configs/conf2.conf
+  330  sudo -u assistant test -r utilisateur/My\ configs/conf2.conf
+  331  sudo -u assistant test -r invite/My\ configs/conf2.conf
+  332  sudo -u rssi test -r invite/My\ configs/conf2.conf
+  333  exit
+  334  l
+  335  ls
+  336  ls -lsha
+  337  cd
+  338  ls
+  339  cd
+  340  cd /
+  341  ls
+  342  ls -lsha
+  343  df -h
+  344  ls -lsha
+  345  ls
+  346  ls -lsha
+  347  ls -ls
+  348  ls -lsha
+  349  ls -lsa
+  350  ls -h
+  351  ls -lsh
+  352  ls -ls
+  353  ls -lsa | awk '{print $1}'
+  354  ls -lsa | awk '{print $1}'|
+  355  ls -lsa | awk '{print $1}'
+  356  ls -lsa | awk '$1>=52428800' |awk '{print $1}'
+  357  ls -lsa | tail n+2 | awk '$1>=52428800' |awk '{print $1}'
+  358  ls -lsa | tail -n +2 | awk '$1>=52428800' |awk '{print $1}'
+  359  ls -rlsa | tail -n +2 | awk '$1>=52428800' | awk '{print $1}'
+  360  ls -lsar | tail -n +2 | awk '$1>=52428800' | awk '{print $1}'
+  361  ls
+  362  locate
+  363  grep -r lost
+  364  nano bigfiles.sh
+  365  sudo nano bigfiles.sh
+  366  chmod 777 bigfiles.sh
+  367  sudo chmod 777 bigfiles.sh
+  368  ./bigfiles.sh
+  369  sudo nano bigfiles.sh
+  370  ./bigfiles.sh
+  371  ls
+  372  cd /etc/
+  373  ls
+  374  truncate
+  375  truncate -s 60M Test\ pour\ bigfiles.sh
+  376  sudo truncate -s 60M Test\ pour\ bigfiles.sh
+  377  sudo nano /commandes.txt
+  378  ls
+  379  cd
+  380  cd /
+  381  ls
+  382  ./bigfiles.sh
+  383  ls
+  384  cd /etc/
+  385  ls
+  386  cd /etc/
+  387  ls
+  388  ls -ls
+  389  ls
+  390  cd /
+  391  ls
+  392  ls -ls
+  393  ls -lsr
+  394  ls
+  395  sudo nano commandes.txt
+  396  ls
+  397  ./bigfiles.sh
+  398  sudo nano bigfiles.sh
+  399  ls
+  400  du
+  401  sudo nano bigfiles.sh
+  402  ./bigfiles.sh
+  403  sudo nano bigfiles.sh
+  404  ls
+  405  du
+  406  man du
+  407  ./bigfiles.sh
+  408  sudo nano bigfiles.sh
+  409  ./bigfiles.sh
+  410  man du
+  411  sudo nano bigfiles.sh
+  412  ./bigfiles.sh
+  413  sudo nano bigfiles.sh
+  414  ./bigfiles.sh
+  415  sudo nano bigfiles.sh
+  416  ./bigfiles.sh
+  417  sudo nano bigfiles.sh
+  418  ./bigfiles.sh
+  419  sudo nano bigfiles.sh
+  420  ls
+  421  sudo nano bigfiles.sh
+  422  man du
+  423  sudo nano bigfiles.sh
+  424  ./bigfiles.sh
+  425  sudo nano bigfiles.sh
+  426  ./bigfiles.sh
+  427  cd etc/
+  428  ls
+  429  ls -ls
+  430  sudo nano bigfiles.sh
+  431  ls -ls
+  432  cd /
+  433  ls
+  434  nano bigfiles.sh
+  435  ./bigfiles.sh
+  436  ls -ls
+  437  nano bigfiles.sh
+  438  sudo du | awk 'print$6'
+  439  sudo du | awk 'print $6'
+  440  sudo du | awk '{print $6}'
+  441  sudo du | awk '{print $7}'
+  442  sudo du | awk '{print $2}'
+  443  sudo du | awk '{print $1}'
+  444  sudo du | awk '{print $2}'
+  445  nano bigfiles.sh
+  446  ./bigfiles.sh
+  447  ls -lsar | awk '{print $1}'
+  448  ls -lsar | awk '{print $6}'
+  449  nano bigfiles.sh
+  450  ls -lsar | awk '{print $6}'
+  451  du
+  452  du -h
+  453  du -s
+  454  man du
+  455  du -B
+  456  du -b
+  457  nano bigfiles.sh
+  458  sudo nano bigfiles.sh
+  459  ./bigfiles.sh
+  460  sudo nano bigfiles.sh
+  461  ./bigfiles.sh
+  462  sudo nano bigfiles.sh
+  463  ./bigfiles.sh
+  464  sudo nano bigfiles.sh
+  465  ./bigfiles.sh
+  466  sudo nano bigfiles.sh
+  467  ./bigfiles.sh
+  468  sudo nano bigfiles.sh
+  469  ./bigfiles.sh
+  470  sudo nano bigfiles.sh
+  471  ./bigfiles.sh
+  472  ls
+  473  ls -lsar
+  474  ls -lsar | awk '{print $2}'
+  475  ls -lsar | awk '{print $3}'
+  476  ls -lsar | awk '{print $4}'
+  477  ls -lsar | awk '{print $5}'
+  478  ls -lsar | awk '{print $6}'
+  479  ls -lsar | awk '{print $7}'
+  480  ls -lsar | awk '{print $8}'
+  481  ls -lsar | awk '{print $10}'
+  482  sudo nano bigfiles.sh
+  483  ./bigfiles.sh
+  484  sudo nano bigfiles.sh
+  485  ./bigfiles.sh
+  486  sudo nano bigfiles.sh
+  487  ./bigfiles.sh
+  488  sudo nano bigfiles.sh
+  489  ./bigfiles.sh
+  490  sudo nano bigfiles.sh
+  491  ./bigfiles.sh
+  492  sudo nano bigfiles.sh
+  493  ls
+  494  cd /etc/
+  495  ls
+  496  mv Test\ pour\ bigfiles.sh  Test_pour_bigfiles
+  497  sudo mv Test\ pour\ bigfiles.sh  Test_pour_bigfiles
+  498  cd
+  499  ls
+  500  cd /
+  501  ls
+  502  ./bigfiles.sh
+  503  nano bigfiles.sh
+  504  ./bigfiles.sh
+  505  find . -type f -exec du -h {} + | sort-n -r
+  506  find . -type f -exec du -a {} +
+  507  find . -type f -exec du -a -b {} +
+  508  find . -type f -exec du -a -b {} + | sort -n -r
+  509  find . -type f -exec du -a -b {} + | sort -n -r | awk '$1>=52428800'|
+  510  find . -type f -exec du -a -b {} + | sort -n -r | awk '$1>=52428800'
+  511  sudo find . -type f -exec du -a -b {} + | sort -n -r | awk '$1>=52428800'
+  512  sudo find . -type f -path ./proc -prune-exec du -a -b {} + | sort -n -r | awk '$1>=52428800'
+  513  sudo find . -type f -path ./proc -prune -exec du -a -b {} + | sort -n -r | awk '$1>=52428800'
+  514  sudo find . -type f ./proc -prune -exec du -a -b {} + | sort -n -r | awk '$1>=52428800'
+  515  sudo find . -type f -path ./proc -prune -false -exec du -a -b {} + | sort -n -r | awk '$1>=52428800'
+  516  sudo find . -type f -path ./proc -prune -false -o -exec du -a -b {} + | sort -n -r | awk '$1>=52428800'
+  517  sudo find . -type f -path ./proc -prune -false -o -exec du -a -b {} + | awk '$1>=52428800'
+  518  sudo find . -type f -path ./proc -prune -false -o | awk '$1>=52428800'
+  519  sudo find . -type f -path ./proc -prune -false -o -exec du -a -b {} + | awk '$1>=52428800'
+  520  sudo find . -type f -path ./proc -prune -false -o -exec ls -lsar {} + | awk '$1>=52428800'
+  521  sudo find . -type f -path ./proc -prune -false -o -exec ls -lsar {} + | awk '$6>=52428800'
+  522  sudo find . -type f -path ./proc -prune -false -o -exec ls -lsar {} + | awk '$5>=52428800'
+  523  sudo find . -type f -path ./proc -prune -false -o -exec ls -lsar {} + | awk '$7>=52428800'
+  524  sudo find . -type f -path ./proc -prune -false -o -exec ls -lsar {} + | awk '$6>=52428800'
+  525  sudo find . -type f -path ./proc -prune -false -o | awk '$1>=52428800'
+  526  sudo find . -type f -path ./proc -prune -o -exec du -a -b {} + | awk '$1>=52428800'
+  527  sudo find . -type f -path *./proc* -prune -o -exec du -a -b {} + | sort -n -r | awk '$1>=52428800'
+  528  sudo find . -type f -path *./proc* -prune -o -exec du -a -b {} + | awk '$1>=52428800'
+  529  sudo find . -type f -path *./proc* -prune -o -exec du -a -b {} + | sort -n -r | awk '$1>=52428800'
+  530  sudo find . -type f -path *./proc* -prune -o -exec du -a -b {} + |  awk '$1>=52428800'
+  531  ./bigfiles.sh
+  532  sudo find . -type f -exec du -a -b {} + |  awk '$1>=52428800'
+  533  sudo find . -type f -exec sudo du --exclude=*proc* -a -b {} + |  awk '$1>=52428800'
+  534  sudo find . -type f -exec du --exclude=*proc* -a -b {} + |  awk '$1>=52428800'
+  535  sudo find . -type f -exec du --exclude=*proc/18* -a -b {} + |  awk '$1>=52428800'
+  536  sudo find . -type f -exec du --exclude=*proc/1* -a -b {} + |  awk '$1>=52428800'
+  537  sudo find . -type f -exec du --exclude=*proc/* -a -b {} + |  awk '$1>=52428800'
+  538  sudo find . -type f -exec du --exclude=*proc/*/task* -a -b {} + |  awk '$1>=52428800'
+  539  sudo find . -type f -exec du --exclude=*proc/*/* -a -b {} + |  awk '$1>=52428800'
+  540  sudo find . -type f -exec du --exclude=*proc/*/* -a -b {} + |  awk '$1>=52428800'| sort -h
+  541  ls
+  542  nano bigfiles.sh
+  543  ./bigfiles.sh
+  544  nano bigfiles.sh
+  545  o
+  546  nano bigfiles.sh
+  547  ./bigfiles.sh
+  548  nano bigfiles.sh
+  549  ./bigfiles.sh
+  550  nano bigfiles.sh
+  551  ./bigfiles.sh
+  552  nano bigfiles.sh
+  553  ./bigfiles.sh
+  554  nano bigfiles.sh
+  555  ./bigfiles.sh
+  556  cd /etc/
+  557  mv Test_pour_bigfiles Test_pour_bigfiles.txt
+  558  sudo mv Test_pour_bigfiles Test_pour_bigfiles.txt
+  559  cd /
+  560  ms
+  561  ls
+  562  ./bigfiles.sh
+  563  ls
+  564  nano bigfiles.sh
+  565  grep -r
+  566  grep -r *
+  567  sudo grep -r * | du
+  568  sudo grep -r * | du -b
+  569  sudo grep -r * | sudo  du -b
+  570  ls
+  571  cat bigfiles.sh
+  572  ./bigfiles.sh
+  573  vi bigfiles.sh
+  574  clear
+  575  ls
+  576  ./bigfiles.sh
+  577  exec bigfiles.sh
+  578  ls
+  579  exec /bigfiles.sh
+  580  ls
+  581  exec /bigfiles.sh
+  582  sudo mkdir -p /mnt/cdrom
+  583  ls
+  584  cd /mnt/cdrom/
+  585  ls
+  586  sudo mount /dev/cdrom /mnt/cdrom/
+  587  cd /mnt/cdrom/
+  588  sudo sh ./VBoxLinuxAdditions.run
+  589  sudo shutdown -r now
+  590  ls
+  591  lsmod | grep vboxguest
+  592  ls
+  593  sudo apt update -y && apt upgrade
+  594  sudo apt install dkms linux-hearders-$(uname -r)build-essential
+  595  sudo apt install dkms linux-hearders-$(uname -r) build-essential
+  596  sudo apt install dkms linux-headers-$(uname -r) build-essential
+  597  cd /mnt/cdrom/
+  598  ls
+  599  cd ..
+  600  ls
+  601  cd cdrom/
+  602  ls
+  603  ls -a
+  604  ld
+  605  ls
+  606  cd
+  607  sudo mount /dev/cdrom /mnt/cdrom/
+  608  cd /mnt/cdrom/
+  609  ls
+  610  sudo sh ./VBoxLinuxAdditions.run --nox11
+  611  sudo shutdown -r now
+  612  ls
+  613  cd /home/utilisateur/
+  614  ls
+  615  cd jour2/
+  616  l
+  617  ls
+  618  ./script1.sh
+  619  nano script1.sh
+  620  ./script1.sh
+  621  nano script1.sh
+  622  ./script1.sh
+  623  nano script1.sh
+  624  o
+  625  nano script1.sh
+  626  ./script1.sh
+  627  nano script1.sh
+  628  ./script1.sh
+  629  nano script1.sh
+  630  ./script1.sh
+  631  nano script1.sh
+  632  ./script1.sh
+  633  nano script1.sh
+  634  ./script1.sh
+  635  nano script1.sh
+  636  ./script1.sh
+  637  nano script1.sh
+  638  ./script1.sh
+  639  nano script1.sh
+  640  ./script1.sh
+  641  nano script1.sh
+  642  ./script1.sh
+  643  nano script1.sh
+  644  ./script1.sh
+  645  nano script1.sh
+  646  ./script1.sh
+  647  nano script1.sh
+  648  ./script1.sh
+  649  nano script1.sh
+  650  ./script1.sh
+  651  nano script1.sh
+  652  ./script1.sh
+  653  nano script1.sh
+  654  ./script1.sh
+  655  ls
+  656  nano script2.sh
+  657  cat script1.sh
+  658  nano script2.sh
+  659  ./script2.sh
+  660  nano script2.sh
+  661  ./script2.sh
+  662  nano script2.sh
+  663  ./script2.sh
+  664  nano script2.sh
+  665  ./script2.sh
+  666  nano script2.sh
+  667  ./script2.sh
+  668  nano script2.sh
+  669  ./script2.sh
+  670  nano script2.sh
+  671  ./script2.sh
+  672  nano script2.sh
+  673  ./script2.sh
+  674  nano script2.sh
+  675  ./script2.sh
+  676  nano script2.sh
+  677  grep 'e\|é\|è\|ê\|ë'
+  678  grep 'e\|é\|è\|ê\|ë' jour2.txt
+  679  grep 'e\|é\|è\|ê\|ë' jour2.txt | wc -l
+  680  ls
+  681  nano script3.sh
+  682  sudo nano script3.sh
+  683  ./script3.sh
+  684  cat script2.sh
+  685  sudo nano script3.sh
+  686  cat script2.sh
+  687  ./script3.sh
+  688  nano script3.sh
+  689  ./script3.sh
+  690  nano script3.sh
+  691  ./script3.sh
+  692  nano script3.sh
+  693  ./script3.sh
+  694  nano script3.sh
+  695  ./script3.sh
+  696  nano script3.sh
+  697  ./script3.sh
+  698  nano script3.sh
+  699  ./script3.sh
+  700  nano script3.sh
+  701  ./script3.sh
+  702  nano script3.sh
+  703  ./script3.sh
+  704  nano script3.sh
+  705  ./script3.sh
+  706  nano script3.sh
+  707  ./script3.sh
+  708  nano script3.sh
+  709  ./script3.sh
+  710  nano script3.sh
+  711  ./script3.sh
+  712  nano script3.sh
+  713  ./script3.sh
+  714  nano script3.sh
+  715  ./script3.sh
+  716  nano script3.sh
+  717  ls
+  718  nano script4.sh
+  719  cat script2.sh
+  720  nano script4.sh
+  721  cat script2.sh
+  722  ./script4.sh
+  723  ls
+  724  sudo nano script3.sh
+  725  ./script3.sh
+  726  sudo nano script3.sh
+  727  ./script3.sh
+  728  sudo nano script4.sh
+  729  ./script4.sh
+  730  sudo nano script5.sh
+  731  ./script5.sh
+  732  sudo nano script5.sh
+  733  ./script5.sh
+  734  ls
+  735  sudo script6.sh
+  736  sudo nano script6.sh
+  737  ./script6.sh
+  738  cd ..
+  739  grep job 52
+  740  grep job\ 52
+  741  cd jour2/
+  742  grep job\ 52 jour2.txt
+  743  nano script7.sh
+  744  ./script
+  745  ./script7.sh
+  746  sudo apt install pdfgrop
+  747  sudo apt install pdfgrep
+  748  sudo nano /commandes.txt
+  749  cd /var/log/
+  750  ls
+  751  cd /sys/log
+  752  cd /sys
+  753  ls
+  754  cd /var
+  755  ls
+  756  cd log/
+  757  ls
+  758  cd syslog
+  759  ls
+  760  cat syslog
+  761  sudo cat syslog
+  762  sudo nano /commandes.txt
+  763  l
+  764  ls
+  765  cd /
+  766  mkdir test_log
+  767  sudo mkdir test_log
+  768*
+  769  sudo rmdir test_log
+  770  sudo mkdir archives\ logs
+  771  ls
+  772  sudo cp /var/log/syslog /archives\ logs/
+  773  sudo cp /var/log/syslog /archives\ logs/log.txt
+  774  ld
+  775  ls
+  776  cd archives\ logs/
+  777  ls
+  778  rm syslog
+  779  sudo rm syslog
+  780  ls
+  781  cd /var/log/
+  782  ls
+  783  cat user.log
+  784  sudo cat user.log
+  785  sudo cat faillog
+  786  sudo cat debug
+  787  sudo cp debug /archives\ logs/
+  788  ls
+  789  cd /
+  790  ls
+  791  sudo nano /commandes.txt
+  792  history
+  793  history >> history.txt
+  794  sudo history >> history.txt
+  795  sudo history > history.txt
+  796  sudo su historry.txt
+  797  sudo touch  historry.txt
+  798  sudo history > history.txt
+  799  sudo touch  history.txt
+  800  sudo history > history.txt
+  801  sudo history >> history.txt
+  802  ls
+  803  rm historry.txt
+  804  ls
+  805  sudo rm historry.txt
+  806  ls
+  807  cd /home/rssi/
+  808  ls
+  809  ls -a
+  810  sudo cay .bash_history
+  811  sudo cat .bash_history
+  812  history
+  813  history > history.txt
