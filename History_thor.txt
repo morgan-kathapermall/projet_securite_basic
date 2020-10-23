@@ -1,0 +1,133 @@
+ 1  ls
+    2  cd /home/
+    3  ls
+    4  cd rssi/
+    5  ls
+    6  nano .bashrc
+    7  ls
+    8  exit
+    9  apt search ssh
+   10  apt install openssh-server
+   11  sudo apt install openssh-server
+   12  apt install sudo
+   13  su
+   14  exit
+   15  cd /home/rssi/
+   16  ls
+   17  cd .bashrc
+   18  sud nano .bashrc
+   19  sudo nano .bashrc
+   20  su
+   21  exit
+   22  ssh-keygen
+   23  cd /etc/ssh/
+   24  ls
+   25  cd /home/rssi/
+   26  ls
+   27  ls- a
+   28  ls -a
+   29  cd .ssh/
+   30  ls
+   31  cd id_rsa
+   32  cd id_rsa.pub
+   33  cd /etc/ssh/
+   34  ls
+   35  cd sshd_config
+   36  cd ssh_h
+   37  cd ssh_host_rsa_key
+   38  cd ssh_config
+   39  cd /home/u
+   40  cd /home/rssi/
+   41  ls
+   42  ls -a
+   43  cd .ssh/
+   44  ls
+   45  mkdir authorized_keys
+   46  ls
+   47  cd authorized_keys/
+   48  cd ..
+   49  ls
+   50  rm authorized_keys/
+   51  rmdir authorized_keys/
+   52  ls
+   53  touch authorized_keys
+   54  nano authorized_keys
+   55  ls
+   56  cat id_rsa.pub
+   57  ls
+   58  exit
+   59  cd /home/
+   60  ls
+   61  cat  /etc/group
+   62  cat  /etc/user
+   63  useradd assistant
+   64  sudo useradd assistant
+   65  ls
+   66  mkhomedir_helper assistant
+   67  sudo mkhomedir_helper assistant
+   68  ls
+   69  cd assistant/
+   70  ls
+   71  ls -a
+   72  cd /etc/ssh/
+   73  ls
+   74  nano sshd_config
+   75  sudo nano sshd_config
+   76  ls
+   77  cd /home/assistant/
+   78  sudo passwd -d assistant
+   79  sudo reboot
+   80  ls
+   81  exit
+   82  ls
+   83  exit
+   84  ls
+   85  cd /etc/ssh/
+   86  nano sshd_config
+   87  sudp nano sshd_config
+   88  sudo nano sshd_config
+   89  sudo /etc/init.d/ssh
+   90  sudo /etc/init.d/ssh restart
+   91  ls
+   92  exit
+   93  sudo nano /etc/ssh/ssh_config
+   94  sudo nano /etc/ssh/sshd_config
+   95  sudo nano /etc/init.d/ssh restart
+   96  sudo /etc/init.d/ssh restart
+   97  ls
+   98  cd /etc/
+   99  ls
+  100  cd /home/rssi/
+  101  ls
+  102  cd
+  103  ls
+  104  cd .sh
+  105  cd .ssh/
+  106  ls
+  107  sudo cp authorized_keys /home/assistant/
+  108  ls
+  109  cd ..
+  110  cd /home/assistant/
+  111  ls
+  112  cat authorized_keys
+  113  ls
+  114  sudo nano /etc/init.d/ssh restart
+  115  sudo /etc/init.d/ssh restart
+  116  ls
+  117  rm authorized_keys
+  118  sudo rm authorized_keys
+  119  ls
+  120  su assistant
+  121  ls
+  122  cs .ssh/
+  123  ls
+  124  cd .ssh/
+  125  sudo cd .ssh/
+  126  ls
+  127  cd ..
+  128  ls
+  129  cd /home/assistant/.ssh/
+  130  sudp cd /home/assistant/.ssh/
+  131  sudo cd /home/assistant/.ssh/
+  132  exit
+  133  history

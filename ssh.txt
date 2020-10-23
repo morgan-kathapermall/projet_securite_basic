@@ -1,0 +1,19 @@
+Job 1 
+La solution est sécurisé mais pas assez
+
+Le changement de port de fait dans /etc/ssh/sshd_config
+
+Job3 
+
+Non car trop dangeureux vu qu'il a tout les droits
+Pour donner des acess 
+
+POur les espaces utiliser \ ou \\\
+
+Job5
+Pour les changements diff permet de comparer un fichier
+                     stat permet d'avoir les heures de modificationù
+
+Job6
+
+Ssh et Teamviewer peuvent permettre

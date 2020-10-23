@@ -1,0 +1,17 @@
+ACID = Auditabilité Confidentialité Intégrité Disponiblité Non Répuditation
+
+SMSI =Système de Management de la SSi -> ISO 2700_
+      Voir modèle Plan Do Check Act
+
+OWASP top 0-10
+
+ANSSI
+GARTNER FORRESTER
+
+CLUSIR PACA
+Assises de la sécurité Monaco
+
+Livre: Guide de survie client / serveur
+
+https://securite.developpez.com/livres/
+

@@ -1,0 +1,59 @@
+ 661  ip a
+  662  sudo rebot
+  663  sudo reboot
+  664  exit
+  665  sudo ssh rssi@10.0.2.15
+  666  exit
+  667  ip a
+  668  sudo reboot
+  669  exit
+  670  ls
+  671  ip a
+  672  ssh rssi@192.168.56.102
+  673  ip addr
+  674  ip a
+  675  sudo nano /etc/ssh/ssh_config
+  676  sudo reboot
+  677  exit
+  678  ssh assistant@192.168.56.102 -p 22444
+  679  ssh rssi@192.168.56.102 -p 22444
+  680  ssh assistant@192.168.56.102 -p 2244
+  681  ssh root@192.168.56.102 -p 2244
+  682  ssh assistant@192.168.56.102 -p 2244
+  683  ssh rssi@192.168.56.102 -p 2244
+  684  exit
+  685  ls
+  686  cd /usr/
+  687  cd /home/utilisateur/
+  688  ls
+  689  cd My\ configs/
+  690  ls
+  691  cat conf1.conf
+  692  stat conf1.conf > 20201022-Erica.txt
+  693  sudo stat conf1.conf > 20201022-Erica.txt
+  694  ls
+  695  cd ..
+  696  ls l-d
+  697  ls -ls
+  698  cd utilisateur/
+  699  cd My\ configs/
+  700  ls
+  701  sudo stat conf1.conf > /home/rssi/20201022-Erica.txt
+  702  ls
+  703  cd /home/rssi/
+  704  ls
+  705  cat 20201022-Erica.txt
+  706  ls
+  707  cd /home/utilisateur/
+  708  ls
+  709  cd My\ configs/
+  710  ls
+  711  ls -l
+  712  cp conf2.conf conf1.conf
+  713  sudo cp conf2.conf conf1.conf
+  714  ls
+  715  cat conf1.conf
+  716  ls
+  717  cat conf1.conf
+  718  exit
+  719  history

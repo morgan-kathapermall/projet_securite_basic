@@ -24,7 +24,7 @@ Creer un répertoire home pour un utilsateur existant: mkhomedir_helper nom_util
 
 Remove un utilisateur: userdel
 
-Creer un groupe: usergroup
+Creer un groupe: groupadd
 
 Ajouter un utilsateur dans un groupe : usermod -a -G nom_groupe nom_utilsateur
 
