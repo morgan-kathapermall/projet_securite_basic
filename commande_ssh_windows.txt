@@ -1,0 +1,5 @@
+type .\id_rsa.pub | ssh adminsys@192.36.253.4 "cat >> .ssh/authorized_keys"
+
+ip link set eth0 up --> activer une interface
+
+https://forums.planethoster.com/threads/faille-de-securite-filezilla.524/
