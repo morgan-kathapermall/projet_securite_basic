@@ -1,0 +1,35 @@
+Dans Proftpd.conf
+
+Pour changer le répertoire des user par défauts -> DefaultRoot
+Pour se logger en temps que anonymous ajouter la ligne RequireValidShell off entre les balises <Anonymous>
+
+Pour tls décommenter la ligne include /etc/proftpd/tls.conf et restart proftpd
+Une conf dans tls.conf va apparaitre
+
+Nous allons aussi décommenter les deux lignes suivantes permettant de charger les certificats puis nous les créérons dans les répertoires définis.
+
+TLSRSACertificateFile /etc/proftpd/ssl/protftpd-rsa.pem
+TLSRSACertificateKeyFile /etc/proftpd/ssl/protftpd-key.pem
+
+On enregistre puis on ferme le fichier. On va maintenant créer les certificats.
+Générer le certificat ssl
+
+cd /etc/protftpd/ssl
+openssl req -x509 -nodes -days 365 -newkey rsa:2048 -out proftpd-rsa.pem -keyout proftpd-key.pem
+
+Protéger la clé
+sudo chmod 440 proftpd-key.pem
+
+Creer un user FTP
+sudo ftpasswd --passwd --name= --uid= --file=/etc/proftpd/ftpd.passwd --home= --shell=/bin/false
+et un groupe FTP
+sudo ftpasswd --group --name=groupe_ftp --gid=1100 --file=/etc/proftpd/ftpd.group --member=virtual_ftp1
+
+Aller dans /etc/shells et rajouter /bin/false --> c'est un faux bash
+
+Ajouter les lignes dans proftpd.conf
+
+#Emplacement du fichier contenant la liste des utilisateurs virtuels,
+AuthUserFile /etc/proftpd/ftpd.passwd
+#Emplacement du fichier contenant la liste des groupes virtuels,
+AuthGroupFile /etc/proftpd/ftpd.group
