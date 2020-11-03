@@ -33,3 +33,17 @@ Ajouter les lignes dans proftpd.conf
 AuthUserFile /etc/proftpd/ftpd.passwd
 #Emplacement du fichier contenant la liste des groupes virtuels,
 AuthGroupFile /etc/proftpd/ftpd.group
+
+Proftpd cherche des fichiers dans /srv/ftp
+
+users banni dans le fichier /etc/ftpusers 
+
+chown uid:guid nom_fichier
+
+uid 2000 -> direction
+
+uid 3000 -> secretaire
+
+uid 4001-4257 -> Fournisseurs
+
+gid 5000 -> groupe interne direction+secretaire

@@ -1,0 +1,24 @@
+for i in `seq 1 3`;
+do
+num=`printf "%03d\n" $i`;
+
+pass=`openssl rand -base64 8`
+echo $pass | sudo ftpasswd --stdin --passwd --name=fournisseur_"$num" --uid=4"$num" --file=/etc/proftpd/ftpd.passwd --home=/ftp/interne/fournisseur_"$num"/ --shell=/bin/false
+
+#sudo ftpasswd --group --name="$nom_gr" --gid="$gid" --file=/etc/proftpd/ftpd.group --member="$nom"
+
+echo fournisseur_"$num" "$pass" >> users.txt
+
+mkdir /ftp/interne/fournisseur_"$num"
+chown 4"$num":5000 /ftp/interne/fournisseur_"$num"/
+chmod 570 /ftp/interne/fournisseur_"$num"/
+
+mkdir /ftp/interne/fournisseur_"$num"/partage
+chown 4"$num":5000 /ftp/interne/fournisseur_"$num"/partage/
+chmod 770 /ftp/interne/fournisseur_"$num"/partage/
+
+mkdir /ftp/interne/fournisseur_"$num"/officiel
+chown 4"$num":5000 /ftp/interne/fournisseur_"$num"/officiel/
+chmod 570 /ftp/interne/fournisseur_"$num"/officiel/
+
+done
