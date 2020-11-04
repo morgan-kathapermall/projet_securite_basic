@@ -1,0 +1,6 @@
+Pour le ftp:
+
+Autoriser le port 21 et 20
+et dans la conf du ftp créer une plage de ports passif et les autoriser en entré
+
+Sinon le ftp créera aléatoirement a chaque connexion un port passif qui ne passera pas le firewall
