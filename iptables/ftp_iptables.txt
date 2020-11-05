@@ -1,6 +1,53 @@
 Pour le ftp:
 
+sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/vsftpd.key -out /etc/ssl/certs/vsftpd.pem
+Décommenter chroot_local_user=YES
+ajouter dans vsftpd.conf
+allow_writeable_chroot=YES
 Autoriser le port 21 et 20
 et dans la conf du ftp créer une plage de ports passif et les autoriser en entré
+pasv_enable=Yes
+pasv_min_port=10000
+pasv_max_port=10010
+
 
 Sinon le ftp créera aléatoirement a chaque connexion un port passif qui ne passera pas le firewall
+
+installation de nmap pour verifier les port ouverts
+
+Mysql : Installer gnpg et wget
+ce rendre dans /tmp faire un wget sur https://dev.mysql.com/get/mysql-apt-config_0.8.15-1_all.deb
+sudo dpkg -i mysql-apt-config_0.8.15-1_all.deb
+sudo apt update
+sudo apt install mysql-server
+
+Faire un sudo systemctl status mysql pour verifier que tt va bien
+
+copier dans /etc/mysql/my.cnf:
+[mysqld]
+user            = mysql
+pid-file        = /var/run/mysqld/mysqld.pid
+socket          = /var/run/mysqld/mysqld.sock
+port            = #PORT AU CHOIX#
+basedir         = /usr
+datadir         = /var/lib/mysql
+tmpdir          = /tmp
+language        = /usr/share/mysql/English
+bind-address    = #IP SERVEUR#
+# skip-networking
+
+Faire un systemctl restart mysql
+UPDATE mysql.user SET Host = "%" WHERE user.Host = "localhost" AND user.User = "nom_user";
+
+Pour tester : mysql -u user -p -h < IP serveur > -P "nouveau port au dessus de 1024"
+
+
+
+
+Pour activer ssl sur apache 2
+sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/apache2/ssl/apache.key -out /etc/apache2/ssl/apache.crt
+Activer le module SSL Apache et le module Headers (optionnel : Il permet d'activer le HSTS) 
+a2enmod ssl
+a2enmod headers
+
+aller dans /etc/apache2/sites-available trouver le .conf du site et changer la premiere ligne
