@@ -1,0 +1,27 @@
+Pour activer ssl sur apache 2
+
+sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/apache2/ssl/apache.key -out /etc/apache2/ssl/apache.crt
+Activer le module SSL Apache et le module Headers (optionnel : Il permet d'activer le HSTS) 
+
+a2enmod ssl
+a2enmod headers
+
+<VirtualHost *:443>
+
+# Activation du SSL
+SSLEngine On
+
+# Activation de tous les protocoles sécurisés (TLS v1.3 et TLS v1.2) tout en désactivant les protocoles obsolètes (TLS v1.0 et 1.1) et ceux non sécurisés (SSL v2, SSL v3)
+SSLProtocol All -SSLv2 -SSLv3 -TLSv1 -TLSv1.1
+
+# On active les méthodes de chiffrement, et on désactive les méthodes de chiffrement non sécurisés (par la présence d'un !)
+SSLCipherSuite HIGH:!aNULL:!MD5:!ADH:!RC4:!DH:!RSA
+
+# Le navigateur devra choisir une méthode de chiffrement en respectant l'ordre indiquée dans SSLCipherSuite
+SSLHonorCipherOrder on
+
+# Chemin vers le certificat SSL de votre nom de domaine
+SSLCertificateFile "/etc/apache2/ssl/apache.crt"
+
+# Chemin vers la clée privée du certificat SSL de votre nom de domaine
+SSLCertificateKeyFile "/etc/apache2/ssl/apache.key"

@@ -1,0 +1,80 @@
+#!/bin/bash
+
+ip4=`hostname -I`
+ip6=`ip -6 addr | grep inet6 | grep link | awk '{print$2}' | cut -d/ -f1 `
+
+iptables -F INPUT
+iptables -F FORWARD
+iptables -F OUTPUT
+iptables -F
+
+ip6tables -F INPUT
+ip6tables -F FORWARD
+ip6tables -F OUTPUT
+ip6tables -F
+
+
+iptables -P INPUT DROP
+iptables -P OUTPUT DROP
+iptables -P FORWARD DROP
+
+ip6tables -P INPUT DROP
+ip6tables -P OUTPUT DROP
+ip6tables -P FORWARD DROP
+
+
+iptables -A INPUT -p tcp -d $ip4 --dport 143 -j ACCEPT
+ip6tables -A INPUT -p tcp -d $ip6 --dport 143 -j ACCEPT
+iptables -A OUTPUT -p tcp -s $ip4 --sport 143 -j ACCEPT
+ip6tables -A OUTPUT -p tcp -s $ip6 --sport 143 -j ACCEPT
+
+
+iptables -A INPUT -p tcp -d $ip4 --dport 110 -j ACCEPT
+ip6tables -A INPUT -p tcp -d $ip6 --dport 110 -j ACCEPT
+iptables -A OUTPUT -p tcp -s $ip4 --sport 110 -j ACCEPT
+ip6tables -A OUTPUT -p tcp -s $ip6 --sport 110 -j ACCEPT
+
+
+iptables -A INPUT -p tcp -d $ip4 --dport 25 -j ACCEPT
+ip6tables -A INPUT -p tcp -d $ip6 --dport 25 -j ACCEPT
+iptables -A OUTPUT -p tcp -s $ip4 --sport 25 -j ACCEPT
+ip6tables -A OUTPUT -p tcp -s $ip6 --sport 25 -j ACCEPT
+
+
+iptables -A INPUT -p -d $ip4 tcp --dport 21 -j ACCEPT
+ip6tables -A INPUT -p tcp -d $ip6 --dport 21 -j ACCEPT
+iptables -A OUTPUT -p tcp -s $ip4 --sport 21 -j ACCEPT
+ip6tables -A OUTPUT -p tcp -s $ip6 --sport 21 -j ACCEPT
+
+
+iptables -A INPUT -p -d $ip4 tcp --dport 20 -j ACCEPT
+ip6tables -A INPUT -p tcp -d $ip6 --dport 20 -j ACCEPT
+iptables -A OUTPUT -p tcp -s $ip4 --sport 20 -j ACCEPT
+ip6tables -A OUTPUT -p tcp -s $ip6 --sport 20 -j ACCEPT
+
+
+iptables -A INPUT -p tcp -d $ip4 --match multiport --dport 80,443 -j ACCEPT
+ip6tables -A INPUT -p tcp -d $ip6 --match multiport --dport 80,443 -j ACCEPT
+iptables -A OUTPUT -p tcp -s $ip4 --match multiport --sport 80,443 -j ACCEPT
+ip6tables -A OUTPUT -p tcp -s $ip6 --match multiport --sport 80,443 -j ACCEPT
+
+iptables -A INPUT -p udp -d $ip4 --dport 53 -j ACCEPT
+ip6tables -A INPUT -p udp -d $ip6 --dport 53 -j ACCEPT
+iptables -A OUTPUT -p udp -s $ip4 --sport 53 -j ACCEPT
+ip6tables -A OUTPUT -p udp -s $ip6 --sport 53 -j ACCEPT
+
+iptables -A INPUT -p tcp -d $ip4 -s 74.125.250.0/24 -j ACCEPT
+ip6tables -A INPUT -p tcp -d $ip6 -s 2001:4860:4864:5::0/64 -j ACCEPT
+iptables -A OUTPUT -p tcp -s $ip4 -d 74.125.250.0/24 -j ACCEPT
+ip6tables -A OUTPUT -p tcp -s $ip6 -d 2001:4860:4864:5::0/64 -j ACCEPT
+
+
+PORTS PASSIF FTP !!
+
+Soit on autorise les connections established
+iptables -A INPUT  -p tcp -m tcp --sport 1024: --dport 1024: -m conntrack --ctstate ESTABLISHED -j ACCEPT -m comment --comment "Allow passive inbound connections"
+iptables -A OUTPUT -p tcp -m tcp --sport 1024: --dport 1024: -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT -m comment --comment "Allow passive inbound connections"
+soit on configure les ports passif a la main
+Je prefere port passif car plus de controle
+
+

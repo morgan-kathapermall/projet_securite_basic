@@ -1,0 +1,16 @@
+un serveur FTP qui mise beaucoup sur la sécurité développé par Chris Evans, chargé de la sécurité de Google Chrome. 
+Il est l'un des premiers logiciels serveurs à mettre en œuvre la séparation des privilèges, minimisant ainsi les risques de piratage.
+File Transfer Protocol, ou FTP, est un protocole de communication destiné au partage de fichiers sur un réseau TCP/IP
+
+Postfix est un serveur de messagerie électronique et un logiciel libre développé par Wietse Venema et plusieurs contributeurs. Il se charge de la livraison de courriers électroniques
+
+Apache HTTP Server est un serveur HTTP créé et maintenu au sein de la fondation Apache. 
+Jusqu'en avril 2019, ce fut le serveur HTTP le plus populaire du World Wide Web. Le nouveau etant nginx
+
+MySQL est un système de gestion de bases de données relationnelle
+
+iptables est un logiciel libre de l'espace utilisateur Linux 
+grâce auquel l'administrateur système peut configurer les chaînes et règles dans le pare-feu netfilter
+
+Netfilter est un cadriciel implémentant un pare-feu au sein du noyau Linux à partir de la version 2.4 de ce dernier. 
+Il prévoit des accroches dans le noyau pour l'interception et la manipulation des paquets réseau lors des appels des routines de réception ou d'émission des paquets des interfaces réseau.

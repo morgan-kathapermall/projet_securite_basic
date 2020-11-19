@@ -1,3 +1,5 @@
+Installer Iptables-persistent et faire une save vers /etc/iptables/rules.v4 pour ne pas perdre la conf a chaque redémarrage
+
 Pour le ftp:
 
 sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/vsftpd.key -out /etc/ssl/certs/vsftpd.pem
@@ -10,10 +12,12 @@ pasv_enable=Yes
 pasv_min_port=10000
 pasv_max_port=10010
 
-
 Sinon le ftp créera aléatoirement a chaque connexion un port passif qui ne passera pas le firewall
 
 installation de nmap pour verifier les port ouverts
+
+
+
 
 Mysql : Installer gnpg et wget
 ce rendre dans /tmp faire un wget sur https://dev.mysql.com/get/mysql-apt-config_0.8.15-1_all.deb
@@ -43,11 +47,45 @@ Pour tester : mysql -u user -p -h < IP serveur > -P "nouveau port au dessus de 1
 
 
 
+Régles Iptables:
+Alors tu me dira si je fais une requete DNS vers l'exterieur faut que la reponse revient donc "entre". 
+Tu as raison, mais ce cas correspont uniquement a une requete entrante en réponse a une requete sortante envoyé précédement. 
+Et pour autoriser les reponses il y a les lignes:
+
+iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+iptables -A OUTPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+
+
+
 
 Pour activer ssl sur apache 2
+
 sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/apache2/ssl/apache.key -out /etc/apache2/ssl/apache.crt
 Activer le module SSL Apache et le module Headers (optionnel : Il permet d'activer le HSTS) 
 a2enmod ssl
 a2enmod headers
 
-aller dans /etc/apache2/sites-available trouver le .conf du site et changer la premiere ligne
+<VirtualHost *:443>
+
+# Activation du SSL
+SSLEngine On
+
+# Activation de tous les protocoles sécurisés (TLS v1.3 et TLS v1.2) tout en désactivant les protocoles obsolètes (TLS v1.0 et 1.1) et ceux non sécurisés (SSL v2, SSL v3)
+SSLProtocol All -SSLv2 -SSLv3 -TLSv1 -TLSv1.1
+
+# On active les méthodes de chiffrement, et on désactive les méthodes de chiffrement non sécurisés (par la présence d'un !)
+SSLCipherSuite HIGH:!aNULL:!MD5:!ADH:!RC4:!DH:!RSA
+
+# Le navigateur devra choisir une méthode de chiffrement en respectant l'ordre indiquée dans SSLCipherSuite
+SSLHonorCipherOrder on
+
+# Chemin vers le certificat SSL de votre nom de domaine
+SSLCertificateFile "/etc/apache2/ssl/apache.crt"
+
+# Chemin vers la clée privée du certificat SSL de votre nom de domaine
+SSLCertificateKeyFile "/etc/apache2/ssl/apache.key"
+
+
+
+aller dans /etc/apache2/sites-available trouver le .conf du site et changer la premiere ligne mettre le port 443
+Rajouter
