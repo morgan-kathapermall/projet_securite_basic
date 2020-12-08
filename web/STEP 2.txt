@@ -1,0 +1,88 @@
+mysql -u root -p
+create database kifarunixdemo;
+create user demouser@localhost identified by 'Str0nGPassword';
+grant all privileges on kifarunixdemo.* to demouser@localhost;
+flush privileges;
+quit
+
+Install Extra PHP Extensions
+While installing LEMP stack as in the link above, a few PHP modules were installed. To install other required php extensions, execute the command below;
+
+apt install php-curl php-gd php-intl php-mbstring php-soap php-xml php-xmlrpc php-zip
+Configure Nginx
+While configuring LEMP stack, you might have created an Nginx configuration file for your site. However, for the purposes of this demo, we are going to create a demo configuration file under, /etc/nginx/sites-available/ as shown below.
+
+vim /etc/nginx/sites-available/kifarunix-demo
+Next, put the content below on the configuration file. Besure to make appropriate adjustments.
+
+
+server {
+	listen 80;
+	root /var/www/html/kifarunix-demo;
+	server_name kifarunix-demo.com;
+
+	location / {
+	    index	index.php index.html;
+	    try_files	$uri $uri/ /index.php?$args;
+	}	
+
+	location ~ \.php$ {
+		include snippets/fastcgi-php.conf;
+		fastcgi_pass unix:/run/php/php7.3-fpm.sock;
+		fastcgi_param   SCRIPT_FILENAME $document_root$fastcgi_script_name;
+	}
+}
+Save the configuration file and enable you site configuration by creating a symbolic link to the enabled sites directory.
+
+ln -s /etc/nginx/sites-available/kifarunix-demo /etc/nginx/sites-enabled/
+Verify Nginx configuration.
+
+nginx -t
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful
+Reload Nginx
+
+systemctl reload nginx
+Download WordPress 5
+Download the latest WordPress archive by running the command below;
+
+wget https://wordpress.org/latest.tar.gz -P /tmp
+Once the download is done, extract WordPress to your web root directory, /var/www/html/kifarunix-demo, in this demo.
+
+mkdir /var/www/html/kifarunix-demo
+tar xzf /tmp/latest.tar.gz --strip-components=1 -C /var/www/html/kifarunix-demo
+Configure WordPress
+Copy the sample WordPress configuration file and rename it as follows.
+
+cp /var/www/html/kifarunix-demo/wp-config{-sample,}.php
+Next, you need to set the database connection settings and authentication keys and Salts.
+
+The database connection details (database, database user and password) are created above while configuring the database.
+
+vim /var/www/html/kifarunix-demo/wp-config.php
+...
+// ** MySQL settings - You can get this info from your web host ** //
+/** The name of the database for WordPress */
+define( 'DB_NAME', 'kifarunixdemo' );
+
+/** MySQL database username */
+define( 'DB_USER', 'demouser' );
+
+/** MySQL database password */
+define( 'DB_PASSWORD', 'Str0nGPassword' );
+
+/** MySQL hostname */
+define( 'DB_HOST', 'localhost' );
+
+/** Database Charset to use in creating database tables. */
+define( 'DB_CHARSET', 'utf8' );
+
+/** The Database Collate type. Don't change this if in doubt. */
+define( 'DB_COLLATE', '' );
+...
+
+The WordPress configuration files should be owned the Web Server user. In this guide, we are using the default web server user, www-data.
+
+chown -R www-data:www-data /var/www/html/kifarunix-demo
+Finalize WordPress installation on Debian 10 Buster
+The backend setup is done. Now to complete the installation of WordPress, navigate the browser and access WordPress using the address, http://<server-domain_OR_IP>

@@ -1,0 +1,24 @@
+Install PostgresSQL
+
+Install apache2
+Install php php-cgi libapache2-mod-php php-common php-pear php-mbstring
+Install postgresql-11 postgresql-client-11
+Install phppgadmin php-pgsql
+
+vi /etc/postgresql/11/main/pg_hba.conf
+# line 92: change like follows and add access permission
+host    all             all             127.0.0.1/32            md5
+host    all             all             votre_réseau            md5
+host    all             all             ::1/128                 md5
+
+vi /etc/apache2/conf-enabled/phppgadmin.conf
+# line 12: add access permission
+supprimer Require local
+Allow from votre_réseau
+
+Si erreur de compilation php:
+aller dans /etc/php/7.3/apache2/php.ini
+et décommenter
+extension=pdo_pgsql
+extension=pgsql
+faire un reboot 

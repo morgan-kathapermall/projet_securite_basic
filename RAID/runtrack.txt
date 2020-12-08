@@ -1,0 +1,60 @@
+RAID 
+
+Job 1
+Temps de lecture d'un secteur = 0.13 ms
+Temps de latence = 4,1 ms
+Temps de déplacement = 8,5ms
+
+Temps moyen = 12,73 ms
+
+Job 2
+
+avec 512 = Perte 15 560 octets
+avec 32 = Perte de 96 octets
+Job 3
+2^16 x 32 Ko = 2097152 Ko = 2Go
+
+Creer un RAID
+
+/dev/mdX : correspondant au nom de la grappe
+--level=Y : indique que je souhaite créer un RAID Y
+--raid-devices=Z : indique le nombre de disques qui vont composer mon RAID et ensuite on indique le nom des disques ou bien utiliser l'abréviation avec des crochets
+mdadm --create /dev/md0 --level=5 --raid-devices=3 /dev/sd[b-d]
+
+Formater le RAID
+exemple en ext4 :
+mkfs.ext4 /dev/mdX
+
+Monter le RAID
+mkdir /mnt/monraid
+mount /dev/mdX /mnt/monraid/
+pour automatiser : dans fstab /dev/mdX      /mnt/monraid      ext4      defaults      0      0
+
+voir les disques Fdisk
+Voir les RAID cat /proc/mdstat
+
+Partitionner un disque:
+fdisk /nom_de_partition
+p -> voir les informatins
+n -> nouvelle partition
+w -> pour sauvegarder
+
+Pour modifier la taille d'une partition --> resize2fs
+
+apt-get install lvm2
+
+crée un volume physique
+pvcreate /nom_de_la_partition
+pvdisplay -> voir la partition crée
+
+crée un groupe de volume
+vgcreate nom_du_groupe nom_du_volume_physique
+pvdisplay -> voir le groupe ajouter a la partition (ligne VG Name)
+vgdisplay nom_du_groupe -> voir les informations sur le volume logique
+
+Crée un volume logique
+lvcreate -L[taille] -nnom_du_volume_logique nom_du_groupe
+lvscan -> permet de voir la list des lvm
+
+
+

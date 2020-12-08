@@ -1,0 +1,102 @@
+Install Nginx on Debian 10 Buster
+To install Nginx on Debian 10 Buster, just run the command below;
+
+
+apt install nginx
+To check if Nginx is working, see our link on Installing Nginx on Debian 10 Buster.
+
+Install Nginx on Debian 10 Buster
+
+
+Install MySQL/MariaDB on Debian 10 Buster
+In this guide, we are going to use MariaDB 10. To install MariaDB, run the command below;
+
+apt install mariadb-server mariadb-client
+This installs MariaDB 10.3. If you need to install MariaDB 10.4 instead, see our guide below.
+
+Install MariaDB 10 on Debian 10 Buster
+
+When installed, MariaDB is started and enabled to run on system boot.
+
+
+systemctl status mariadb
+● mariadb.service - MariaDB 10.3.15 database server
+   Loaded: loaded (/lib/systemd/system/mariadb.service; enabled; vendor preset: enabled)
+   Active: active (running) since Thu 2019-07-18 15:31:35 EDT; 9min ago
+     Docs: man:mysqld(8)
+           https://mariadb.com/kb/en/library/systemd/
+ Main PID: 2356 (mysqld)
+   Status: "Taking your SQL requests now..."
+    Tasks: 31 (limit: 1150)
+   Memory: 76.4M
+   CGroup: /system.slice/mariadb.service
+           └─2356 /usr/sbin/mysqld
+systemctl is-enabled mariadb
+enabled
+MariaDB initial Security
+By default, MariaDB uses unix_socket plugin for authentication and thus, it doesn’t require password to login. You can simply run mysql or mysql -u root to login to MariaDB server.
+
+mysql
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 48
+Server version: 10.3.15-MariaDB-1 Debian 10
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]>
+The unix_socket authentication plugin also allows the user to use operating system credentials when connecting to MariaDB via the local Unix socket file.
+
+To enable password based authentication, login to MariaDB and run the commands below;
+
+ALTER USER root@localhost IDENTIFIED VIA mysql_native_password;
+SET PASSWORD = PASSWORD('Str0nGPass');
+flush privileges;
+quit
+When you now try to login as root, you will be prompted for password.
+
+mysql -u root -p
+Enter password: 
+Read more about MariaDB unix socket authentication plugin.
+
+You can also run the mysql_secure_installation script to remove MariaDB test databases, anonymous users and disallow remote root login. To run the script, just run the command below
+
+mysql_secure_installation
+Install PHP 7.3 on Debian 10 Buster
+PHP 7.3 is available on the default Debian 10 Buster repos. Hence, execute the command below to install PHP and PHP Apache and MySQL/MariaDB extensions.
+
+apt install php php-fpm php-mysql
+Configure Nginx for PHP Processing
+For Nginx to process PHP pages, you need to include index.php as a value for the index parameter. Since we are using the default configuration for testing, edit the it as follows;
+
+
+vim /etc/nginx/sites-enabled/default
+...
+        root /var/www/html;
+
+        # Add index.php to the list if you are using PHP
+        index index.php index.html index.htm index.nginx-debian.html;
+...
+Also, you need to configure Nginx to pass PHP scripts to FastCGI server. Uncomment the line location ~ \.php$ and configure it as shown below
+
+        location ~ \.php$ {
+                include snippets/fastcgi-php.conf;
+                fastcgi_pass unix:/run/php/php7.3-fpm.sock;
+        }
+Test Nginx configuration
+
+nginx -t
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful
+Restart Nginx and FastCGI process manager.
+
+systemctl restart  nginx php7.3-fpm
+Test PHP Processing
+To test PHP processing, create a PHP test page under the Apache web root directory, usually, /var/www/html, with the following content.
+
+vim /var/www/html/test.php
+<?php phpinfo();
+To test PHP processing, navigate to the browser and enter the address;
+
+http://<server-IP>/test.php
